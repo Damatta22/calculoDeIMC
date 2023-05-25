@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+    <script type="text/javascript">
+
+        const calculaImc = () => {
+            const altInformada = document.imcForm.elements["alt"].value;
+            const pesoInformado = document.imcForm.elements["peso"].value;
+
+            const imc = pesoInformado / (altInformada * altInformada)
+
+            if (imc < 18.5) {
+                alert("Você está abaixo do peso");
+            }
+
+            else if (imc >= 18.5 && imc < 25) {
+                alert("Você está com peso normal");
+            }
+
+            else if (imc >= 25 && imc < 30) {
+                alert("Você está com sobrepeso");
+            }
+
+            else if (imc >= 30 && imc < 40) {
+                alert("Você está com obesidade");
+            }
+
+            else if (imc >= 40) {
+                alert("Você esta com obesidade grave")
+
+            }
+
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <form id="imcForm" name="imcForm" action="#">
+        <h1 class="title">CÁLCULO DE IMC</h1>
+        <label class="labelAlt">Altura</label>
+
+        <input id="alt" placeholder="Digite a sua altura" type="text" name="altura" />
+        <br><br>
+        <label class="labelPeso">Peso</label>
+        <input id="peso" placeholder="Digite o seu peso" type="text" name="peso" />
+        <br><br>
+        <button class="calcular" type="submit" value="Calcular" onClick="calculaImc()">Calcular</button>
+    </form>
+
+
+
+
+    <style>
+        #imcForm {
+
+            width: 150vh;
+            height: 70vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(138, 92, 152);
+        }
+
+        .title {
+            font-size: 70px;
+            animation: flipTitle 3s;
+
+
+        }
+
+
+        @keyframes flipTitle {
+            from {
+                transform: rotateX(90deg);
+            }
+
+            to {
+                transform: rotateX(0deg);
+            }
+        }
+
+        .labelAlt {
+            font-size: 40px;
+            margin-bottom: 10px;
+            font-weight: bold;
+
+        }
+
+        .labelPeso {
+            font-size: 40px;
+            margin-bottom: 10px;
+            font-weight: bold;
+
+        }
+
+        #alt {
+            width: 500px;
+            height: 50px;
+            font-size: 30px;
+            outline: none;
+            box-shadow: none;
+            border-color: transparent;
+
+
+        }
+
+
+        #peso {
+            width: 500px;
+            height: 50px;
+            font-size: 30px;
+            outline: none;
+            box-shadow: none;
+            border-color: transparent;
+
+
+        }
+
+        .calcular {
+            width: 400px;
+            height: 50px;
+            background-color: gray;
+            margin-top: 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 30px;
+
+
+        }
+    </style>
+</body>
+
+</html>
